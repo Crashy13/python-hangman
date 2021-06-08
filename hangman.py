@@ -4,9 +4,11 @@ def play(word):
 
     comp_word = split(word)
     used_letters = []
+    word_display = '_' * len(word)
     counter = 0
     print('The word is', len(word), 'letters long.')
-
+    print(word_display)
+    
     while counter < 6:
         user_guess = input("Please guess a letter: ")
         user_guess = user_guess.lower()
@@ -20,7 +22,10 @@ def play(word):
             else:
                 print('The letter', user_guess, 'is in the word.')
                 used_letters.append(user_guess)
-
+        elif len(user_guess) != 1:
+            print('Please choose only one letter')
+        elif user_guess != user_guess.isalpha():
+            print('Please choose a letter')
 
 
 
